@@ -22,7 +22,7 @@ export default function Category({ title, data }) {
 
     return (
         <div>
-            <Accordion className={expanded ? 'accordionE' : 'accordion'} expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
+            <Accordion className={expanded ? 'accordionE' : 'accordion'} expanded={expanded === 'panel1'} onChange={handleChange('panel1')} align="center">
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
                     aria-controls="panel1bh-content"
@@ -31,8 +31,8 @@ export default function Category({ title, data }) {
                 >
                     <Typography align="center" variant="h4" sx={{ fontFamily: 'nunito', width: '100%', flexShrink: 0, color: 'white' }}>{title} </Typography>
                 </AccordionSummary>
-                <AccordionDetails className='accordionDetails'>
-                    <Masonry  className='Masonry' columns={{ xs: 3, sm: 4 }} spacing={2} display="flex"  sx={{ alignContent:'center', width:'100%'}}>
+                <AccordionDetails className='accordionDetails' align="center">
+                    <Masonry  className='Masonry' columns={{ xs: 1, sm: 2, md: 3, lg:4, xl:5}} spacing={2} display="flex"  sx={{ alignContent:'center', width:'100%'}}>
 
                         {data.map((d) => {
                             if (d.category === title) {
@@ -47,7 +47,7 @@ export default function Category({ title, data }) {
 
                                         />
                                         <CardContent>
-                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' >
                                                 {d.comment}
                                             </Typography>
                                         </CardContent>
@@ -63,7 +63,7 @@ export default function Category({ title, data }) {
                                             alt="image"
                                         />
                                         <CardContent>
-                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' >
                                                 {d.comment}
                                             </Typography>
                                         </CardContent>
@@ -78,7 +78,7 @@ export default function Category({ title, data }) {
                                             src={d.link}
                                         />
                                         <CardContent>
-                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' >
                                                 {d.comment}
                                             </Typography>
                                         </CardContent>
@@ -89,7 +89,7 @@ export default function Category({ title, data }) {
                                 else {
                                     return <Card className='Card' align="center" key={d.link} >
                                         <CardContent>
-                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
+                                            <Typography className='CardComment' color='black' align="justify" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' >
                                                 {d.link}
                                             </Typography>
                                         </CardContent>
