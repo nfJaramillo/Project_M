@@ -32,13 +32,13 @@ export default function Category({ title, data }) {
                     <Typography align="center" variant="h4" sx={{ fontFamily: 'nunito', width: '100%', flexShrink: 0, color: 'white' }}>{title} </Typography>
                 </AccordionSummary>
                 <AccordionDetails className='accordionDetails'>
-                    <Masonry  columns={{ xs: 3, sm: 4 }} spacing={2} display="flex" container  justifyContent="center" justify="center"  >
+                    <Masonry  className='Masonry' columns={{ xs: 3, sm: 4 }} spacing={2} display="flex"  sx={{ alignContent:'center', width:'100%'}}>
 
                         {data.map((d) => {
                             if (d.category === title) {
                                 if (d.type === 'video') {
-                                    return <Card className='Card' align="center" >
-                                        <CardMedia sx={{ minWidth: '20vw', maxWidth: '25vw', minHeight: '20vw', maxHeight: '25vh' }}
+                                    return <Card className='Card' align="center" key={d.link}  >
+                                        <CardMedia className='CardMediaVideo'sx={{ minWidth: '20vw', maxWidth: '25vw', minHeight: '20vw', maxHeight: '25vh', objectFit: "contain"}}
                                             component="iframe"
                                             src={d.link}
                                             frameBorder={0}
@@ -47,7 +47,7 @@ export default function Category({ title, data }) {
 
                                         />
                                         <CardContent>
-                                            <Typography color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
                                                 {d.comment}
                                             </Typography>
                                         </CardContent>
@@ -56,14 +56,14 @@ export default function Category({ title, data }) {
                                 }
 
                                 else if (d.type === 'image') {
-                                    return <Card className='Card' align="center" >
-                                        <CardMedia sx={{ maxWidth: '25vw', maxHeight: '25vh' }}
+                                    return <Card className='Card' align="center" key={d.link}  >
+                                        <CardMedia className='CardMedia'  sx={{  objectFit: "contain" }}
                                             component="img"
                                             image={d.link}
                                             alt="image"
                                         />
                                         <CardContent>
-                                            <Typography color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
                                                 {d.comment}
                                             </Typography>
                                         </CardContent>
@@ -72,13 +72,13 @@ export default function Category({ title, data }) {
                                 }
 
                                 else if (d.type === 'audio') {
-                                    return <Card className='Card' align="center" >
-                                        <CardMedia sx={{ width: '350px', height: '150px' }}
+                                    return <Card className='Card' align="center"  key={d.link} >
+                                        <CardMedia   className='CardMediaAudio'  
                                             component="iframe"
                                             src={d.link}
                                         />
                                         <CardContent>
-                                            <Typography color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
                                                 {d.comment}
                                             </Typography>
                                         </CardContent>
@@ -87,9 +87,9 @@ export default function Category({ title, data }) {
                                 }
 
                                 else {
-                                    return <Card className='Card' align="center" >
+                                    return <Card className='Card' align="center" key={d.link} >
                                         <CardContent>
-                                            <Typography color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
                                                 {d.link}
                                             </Typography>
                                         </CardContent>

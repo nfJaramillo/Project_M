@@ -10,8 +10,7 @@ function App() {
   return (
     <div className="App">
         {/* <img src={logo} className="App-logo" alt="logo" />  */}
-        <div className='quote'>El mundo sigue girando,</div>
-        <div className='quote'>pero yo sigo aquí</div>
+        <div className='quote'>El mundo sigue girando, <br /> pero yo sigo aquí</div>
         <div className="data">
         <Data/> 
         </div>

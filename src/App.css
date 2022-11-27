@@ -1,9 +1,7 @@
 .App {
   background-color: white;
-  width: 100%;
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -15,22 +13,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 .quote{
   color: black;
-
   margin-bottom: 2vh ;
   font-family: 'Poiret One';
   font-size: 250%;
-
+  text-align: center;
 
 }
 
-.App-logo {
-  height: 60vh;
-  margin: 10vw;
-}
 
-.data{
-  min-width: 50vw;
-}
 
 @media only screen and (max-width: 600px) {
 

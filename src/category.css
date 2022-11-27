@@ -1,38 +1,26 @@
-.image{
-    max-width: 30vw;
-    max-height: 30vh;
-    margin: 1vw;
-}
 
-.accordion{
-
+.accordionE{
+    width: 100%;
     margin-bottom: 2vh ;
     background: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
 }
 
-.accordionE{
-
+.accordion{
+    width: 100%;
+    margin-bottom: 2vh ;
     background: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
 }
 
 .accordionDetails{
-    width: 98vw;
+    width: 100% !important;
     background-color: white;
-    justify-items: center !important;
-    align-items: center !important; 
-   
+
 }
 
-.panel1{
-    width: 100% ;
-    margin-bottom: 2vh ;
-    margin-top: 2vh ;
-}
+
 
 .Card{
-  padding: 1rem;
   color: white;
-  border-width: 3px;
   border-style: solid;
   border-image: 
     linear-gradient(
@@ -43,10 +31,26 @@
 }
 
 @media only screen and (max-width: 600px) {
+
+
     .Card{
         width: 90% !important;
+
     }
 
+    .CardMediaVideo{
+        min-width: 100% !important;
+        max-width: 100% !important;
+        min-height: 70% !important;
+        max-height: 60% !important;
+
+    }
+    .CardComment{
+        min-width: 100% !important;
+        max-width: 100% !important;
+        min-height: 60% !important;
+        max-height: 60% !important;
+    }
 
 }
 
