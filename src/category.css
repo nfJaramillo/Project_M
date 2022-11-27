@@ -5,17 +5,22 @@
 }
 
 .accordion{
-    width: 100% ;
+
     margin-bottom: 2vh ;
     background: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
 }
 
 .accordionE{
+
     background: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
 }
 
 .accordionDetails{
+    width: 98vw;
     background-color: white;
+    justify-items: center !important;
+    align-items: center !important; 
+   
 }
 
 .panel1{
@@ -35,5 +40,13 @@
       #FDBB2D, 
       #3A1C71
     ) 1 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .Card{
+        width: 90% !important;
+    }
+
+
 }
 

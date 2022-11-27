@@ -8,7 +8,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Grid2 from '@mui/material/Unstable_Grid2';
+import Masonry from '@mui/lab/Masonry';
 
 
 
@@ -29,76 +29,72 @@ export default function Category({ title, data }) {
                     id="panel1bh-header"
 
                 >
-                    <Typography align="center" variant="h4" sx={{ fontFamily:'nunito', width: '100%', flexShrink: 0, color: 'white' }}>{title} </Typography>
+                    <Typography align="center" variant="h4" sx={{ fontFamily: 'nunito', width: '100%', flexShrink: 0, color: 'white' }}>{title} </Typography>
                 </AccordionSummary>
                 <AccordionDetails className='accordionDetails'>
-                    <Grid2 display="flex" container spacing={3} justifyContent="center" justify="center" >
+                    <Masonry  columns={{ xs: 3, sm: 4 }} spacing={2} display="flex" container  justifyContent="center" justify="center"  >
 
                         {data.map((d) => {
                             if (d.category === title) {
                                 if (d.type === 'video') {
-                                    return <Grid2 key={d.link} xs="auto" alignItems="center" >
-                                        <Card className='Card' align="center" >
-                                            <CardMedia  sx={{minWidth: '20vw',maxWidth: '25vw', minHeight: '20vw', maxHeight: '25vh' }}
-                                                component="iframe"
-                                                src={d.link}
-                                                frameBorder={0}
-                                                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                                                allowFullScreen
-                                                
-                                            />
-                                            <CardContent>
-                                                <Typography color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
+                                    return <Card className='Card' align="center" >
+                                        <CardMedia sx={{ minWidth: '20vw', maxWidth: '25vw', minHeight: '20vw', maxHeight: '25vh' }}
+                                            component="iframe"
+                                            src={d.link}
+                                            frameBorder={0}
+                                            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                                            allowFullScreen
+
+                                        />
+                                        <CardContent>
+                                            <Typography color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
                                                 {d.comment}
-                                                </Typography>
-                                            </CardContent>
-                                        </Card>
-                                    </Grid2>
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
                                 }
 
                                 else if (d.type === 'image') {
-                                    return <Grid2 key={d.link} xs="auto" alignItems="center" >
-                                        <Card className='Card' align="center" >
-                                            <CardMedia  sx={{ maxWidth: '25vw', maxHeight: '25vh' }}
-                                                component="img"
-                                                image={d.link}
-                                                alt="image"
-                                            />
-                                            <CardContent>
-                                                <Typography color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
+                                    return <Card className='Card' align="center" >
+                                        <CardMedia sx={{ maxWidth: '25vw', maxHeight: '25vh' }}
+                                            component="img"
+                                            image={d.link}
+                                            alt="image"
+                                        />
+                                        <CardContent>
+                                            <Typography color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
                                                 {d.comment}
-                                                </Typography>
-                                            </CardContent>
-                                        </Card>
-                                    </Grid2>
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
                                 }
 
                                 else if (d.type === 'audio') {
-                                    return <Grid2 key={d.link} xs="auto" alignItems="center" >
-                                    <Card className='Card' align="center" >
-                                        <CardMedia  sx={{ width: '350px', height: '150px' }}
+                                    return <Card className='Card' align="center" >
+                                        <CardMedia sx={{ width: '350px', height: '150px' }}
                                             component="iframe"
                                             src={d.link}
                                         />
                                         <CardContent>
                                             <Typography color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
-                                            {d.comment}
+                                                {d.comment}
                                             </Typography>
                                         </CardContent>
                                     </Card>
-                                </Grid2>
+
                                 }
 
                                 else {
-                                    return <Grid2 key={d.link} xs="auto" alignItems="center" >
-                                    <Card className='Card' align="center" >
+                                    return <Card className='Card' align="center" >
                                         <CardContent>
                                             <Typography color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' sx={{ maxWidth: '25vw' }}>
-                                            {d.link}
+                                                {d.link}
                                             </Typography>
                                         </CardContent>
                                     </Card>
-                                </Grid2>
+
                                 }
                             }
                             else {
@@ -108,7 +104,7 @@ export default function Category({ title, data }) {
                         }
 
 
-                    </Grid2>
+                    </Masonry >
                 </AccordionDetails>
             </Accordion>
         </div>
