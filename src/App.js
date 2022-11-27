@@ -6,7 +6,7 @@ function App() {
   
 
 
-// Version 1 for github pages
+// Version 1.1 for github pages
   return (
     <div className="App">
         {/* <img src={logo} className="App-logo" alt="logo" />  */}
