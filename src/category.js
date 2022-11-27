@@ -38,7 +38,7 @@ export default function Category({ title, data }) {
                             if (d.category === title) {
                                 if (d.type === 'video') {
                                     return <Card className='Card' align="center" key={d.link}  >
-                                        <CardMedia className='CardMediaVideo'sx={{ minWidth: '20vw', maxWidth: '25vw', minHeight: '20vw', maxHeight: '25vh', objectFit: "contain"}}
+                                        <CardMedia className='CardMediaVideo'sx={{  minHeight:'25vh', objectFit: "contain"}}
                                             component="iframe"
                                             src={d.link}
                                             frameBorder={0}
