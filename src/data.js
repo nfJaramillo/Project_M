@@ -56,6 +56,9 @@ function Data() {
             if (index === -1) {
                 categories.current.push(e.category)
             }
+            const D = new Date(e.date);
+            e.date = D.getDate() + "/" + (D.getMonth() + 1) + "/" + D.getFullYear();
+            
         });
         setData(data.current)
         setCategories(categories.current)
@@ -66,15 +69,15 @@ function Data() {
 
 
     return (
-       
-            <span>
-                {categories2.map((c) => (
-                    <Category key={c} title={c} data={data2}></Category>
-                ))
-                }
 
-            </span>
-    
+        <span>
+            {categories2.map((c) => (
+                <Category key={c} title={c} data={data2}></Category>
+            ))
+            }
+
+        </span>
+
 
 
     )

@@ -9,6 +9,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Masonry from '@mui/lab/Masonry';
+import Divider from '@mui/material/Divider';
 
 
 
@@ -46,9 +47,13 @@ export default function Category({ title, data }) {
                                             allowFullScreen
 
                                         />
-                                        <CardContent>
+                                        <CardContent className='CardContent'>
                                             <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' >
                                                 {d.comment}
+                                            </Typography>
+                                            <Divider  className='divider' sx={{  height:'0.1vh'}}/>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h6" component="div" fontFamily='Nunito Light' >
+                                                {d.date}
                                             </Typography>
                                         </CardContent>
                                     </Card>
@@ -62,9 +67,13 @@ export default function Category({ title, data }) {
                                             image={d.link}
                                             alt="image"
                                         />
-                                        <CardContent>
+                                        <CardContent className='CardContent'>
                                             <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' >
                                                 {d.comment}
+                                            </Typography>
+                                            <Divider light className='divider' sx={{  height:'0.1vh'}}/>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h6" component="div" fontFamily='Nunito Light' >
+                                                {d.date}
                                             </Typography>
                                         </CardContent>
                                     </Card>
@@ -77,9 +86,32 @@ export default function Category({ title, data }) {
                                             component="iframe"
                                             src={d.link}
                                         />
-                                        <CardContent>
+                                        <CardContent className='CardContent'>
                                             <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' >
                                                 {d.comment}
+                                            </Typography>
+                                            <Divider light className='divider' sx={{  height:'0.1vh'}}/>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h6" component="div" fontFamily='Nunito Light' >
+                                                {d.date}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+
+                                }
+
+                                else if (d.type === 'pdf') {
+                                    return <Card className='Card' align="center"  key={d.link} >
+                                        <CardMedia   className='CardMediaAudio'   sx={{  minHeight:'25vh', objectFit: "contain"}}
+                                            component="iframe"
+                                            src={d.link+'#view=fitH'}
+                                        />
+                                        <CardContent className='CardContent'>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' >
+                                                {d.comment}
+                                            </Typography>
+                                            <Divider light className='divider' sx={{  height:'0.1vh'}}/>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h6" component="div" fontFamily='Nunito Light' >
+                                                {d.date}
                                             </Typography>
                                         </CardContent>
                                     </Card>
@@ -88,9 +120,13 @@ export default function Category({ title, data }) {
 
                                 else {
                                     return <Card className='Card' align="center" key={d.link} >
-                                        <CardContent>
+                                        <CardContent className='CardContent'>
                                             <Typography className='CardComment' color='black' align="justify" alignContent="center" gutterBottom variant="h5" component="div" fontFamily='Nunito' >
                                                 {d.link}
+                                            </Typography>
+                                            <Divider light className='divider' sx={{  height:'0.1vh'}}/>
+                                            <Typography className='CardComment' color='black' align="center" alignContent="center" gutterBottom variant="h6" component="div" fontFamily='Nunito Light' >
+                                                {d.date}
                                             </Typography>
                                         </CardContent>
                                     </Card>

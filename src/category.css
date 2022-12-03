@@ -33,6 +33,24 @@
     ) 1 100%;
 }
 
+.divider{
+
+  background:  linear-gradient(90deg, #FDBB2D 0%, #3a1c71 ) 100%;
+
+
+  
+}
+
+
+.CardContent{
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+.CardComment{
+  margin-top: 0.35em !important;
+}
+
 @media only screen and (max-width: 900px) {
    
 
